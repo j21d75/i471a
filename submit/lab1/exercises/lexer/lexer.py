@@ -15,10 +15,12 @@ def scan(text):
     tokens = []
     while (len(text) > 0):
 
-        if (m := re.compile(r'\s+').match(text)) :
+        if (m := re.compile(r'\s+|//.*').match(text)) :
             pass  # ignore whitespace
         elif (m := re.compile(r'\d+').match(text)) :
             tokens.append(Token('INT', m.group()))
+        elif (m := re.compile(r'[a-zA-Z_]\w*').match(text)) :
+            tokens.append(Token('ID', m.group()))
         else :
             #must be last: match any char
             m = re.compile(r'.').match(text)
