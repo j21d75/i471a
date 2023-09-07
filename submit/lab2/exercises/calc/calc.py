@@ -14,7 +14,8 @@ expr
   : term ( ( '+' | '-' ) term )*
   ;
 term
-  : '-' term
+  : '-' term 
+  | factor '**' term
   | factor
   ;
 factor
@@ -65,7 +66,12 @@ def parse(text):
             consume('-')
             return - term()
         else:
-            return factor()
+            f = factor()
+            if (peek('**')):
+                consume('**')
+                t = term()
+                f = f**t
+            return f
 
     def factor():
         if (peek('INT')):
@@ -90,11 +96,14 @@ def parse(text):
 
 def scan(text):
     SPACE_RE = re.compile(r'\s+')
+    EXP_RE = re.compile(r'\*\*')
     INT_RE = re.compile(r'\d+')
     CHAR_RE = re.compile(r'.')
     def next_match(text):
         m = SPACE_RE.match(text)
         if (m): return (m, None)
+        m = EXP_RE.match(text)
+        if (m): return (m, '**')
         m = INT_RE.match(text)
         if (m): return (m, 'INT')
         m = CHAR_RE.match(text)  #must be last: match any char
