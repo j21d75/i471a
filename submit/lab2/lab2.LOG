@@ -1667,4 +1667,44 @@ NameError: name 'RE' is not defined. Did you mean: 're'?
 	submit/lab2/exercises/calc/calc.py
 Please commit your changes or stash them before you switch branches.
 Aborting
-[?2004h
+[?2004hjdavis75@remote07:~/i471a$ git checkout main[4Pbranch -l
+[?2004l[?1h=  lab0[m[m
+  lab1[m[m
+* [32mlab2[m[m
+  main[m[m
+[K[?1l>[?2004hjdavis75@remote07:~/i471a$ git stu[Katud[Ks -s
+[?2004l [31mM[m submit/lab2/exercises/ast/ast.py
+ [31mM[m submit/lab2/exercises/calc/calc.py
+[31m??[m submit/lab2/exercises/ast/cor.txt
+[31m??[m submit/lab2/exercises/ast/my.txt
+[31m??[m submit/lab2/lab2.LOG
+[?2004hjdavis75@remote07:~/i471a$ git add .
+[?2004l[?2004hjdavis75@remote07:~/i471a$ git commit -m 'completed lab2'
+[?2004l[lab2 e083a07] completed lab2
+ Committer: Jared Davis <jdavis75@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 1905 insertions(+), 3 deletions(-)
+ create mode 100644 submit/lab2/exercises/ast/cor.txt
+ create mode 100644 submit/lab2/exercises/ast/my.txt
+ create mode 100644 submit/lab2/lab2.LOG
+[?2004hjdavis75@remote07:~/i471a$ git o[Kpush 
+[?2004lUsername for 'https://github.com': j21d74 5
+Password for 'https://j21d75@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/j21d75/i47a.git/'
+[?2004hjdavis75@remote07:~/i471a$ [?2004l
+exit
+
+Script done on 2023-09-07 17:40:07-04:00 [COMMAND_EXIT_CODE="128"]
