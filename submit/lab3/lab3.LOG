@@ -1,0 +1,141 @@
+Script started on 2023-09-14 13:35:09-04:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="100" LINES="63"]
+[?2004hjdavis75@remote01:~/i471a/submit/lab3$ racket
+[?2004lWelcome to Racket v8.7 [cs].
+> (+ 1 (/ 1 2) (/ 1 2[21G[K3) (/ 1 4) (/ 1 5))
+137/60
+> > (+ 1 (/ 1 2) (/ 1 3) (/ 1 4) (/ 1 5))[7G[1@. [8G[1@0 
+2.283333333333333
+> (define x 4)
+> > (define x 4)> (+ 1.0 (/ 1 2) (/ 1 3) (/ 1 4) (/ 1 5))[7G[2P [40G[39G )[40G()[41G/)[42G )[43G1)[44G )[45G6)[47G))
+49/20
+> (- (* 3 ( exp[15G[K[14G[K[13G[K[12Gexp x 4)) (* 2 (exp[18G[P)[18G[1@3))) (* 2 (exp x 2)))> ([1@(-> ([1@+(> (+[1@ ((- (* 3 (exp x 3)) (* 2 (exp x 2))) (* 4 X[47G[Kx))> ([1@(+> ([1@-(> (-[1@ ((+ (- (* 3 (exp x 3)) (* 2 (exp x 2))) (* 4 x)) 1)
+; exp: arity mismatch;
+;  the expected number of arguments does not match the given number
+;   expected: 1
+;   given: 2
+; [,bt for context]
+> > (- (+ (- (* 3 (exp x 3)) (* 2 (exp x 2))) (* 4 x)) 1)[37G[1@t [21G[1@t 
+175
+> (define P 1000)
+> (define r .05)
+> (define n 1)
+> > (define n 1)[13G)[K[13G5)[11G 5)[K[11G5 5)[11G 5)[K[11Gt 5)
+> (/ r n)> ([1@(/> ([1@+(> (+[1@n(> (+[P(> (+[1@ ([6G[1@1([7G[1@ ((/ r n))> ([1@(+> ([1@e(> (e[1@x([6G[1@p([7G[1@t([8G[1@ ((+ 1 (/ r n)) (8[24G[K* n t)> ([1@(e> ([1@*(> (*[1@ ([6G[1@P([7G[1@ ((expt (+ 1 (/ r n)) (* n t))
+  )
+1276.2815625000003
+> > (* P (expt (+ 1 (/ r n)) (* n t))
+  ))  [K [K[A[36G)
+1276.2815625000003
+> (define list1 '(1 2 3 4 5))
+> > (define list1 '(1 2 3 4 5))[15G[P [15G[1@2  '(1 22 3 4 5[27G))[K[26G))[K[25G))[K[24G))[K[23G))[K[22G))[K[21G))[K[20G))[K[19G))[K[19Ga))[20G ))[21Gb))[22G ))[23Gc))[24G ))[25Gd))[26G ))[27Ge))
+> car> ca[K> c[K> [K)> [K(car list1)
+1
+> > (car list1)> (c[Pr> (c[1@dr
+'(2 3 4 5)
+> > (cdr list1)> (ca[14G[12G)[K[12G2)
+'a
+> > (car list2)> (c[Pr> (c[1@dr
+'(b c d e)
+> (car (ca[10G[Kdr (cdr lisrs[22G[K[21G[Kt1)))
+3
+> list1
+'(1 2 3 4 5)
+> > list1[7G[K2
+'(a b c d e)
+> (car (cdr list2))
+'b
+> (cdr (cdr (cdr list2)))
+'(d e)
+> (append list1 list2)
+'(1 2 3 4 5 a b c d e)
+> (a[> (a[Kppend (cdr (cdr list1)) (cdr (cdr 9[39G[K(cdr list2)))
+  )
+'(3 4 5 d e)
+> > (append (cdr (cdr list1)) (cdr (cdr (cdr list2)))
+  )  [K [K[A[52G)
+'(3 4 5 d e)
+> (define (rect-area width height) (* width height))
+> (rect-are 4 5)e[12G[1@a 
+20
+> (define (rect-perm (* width 2) (*height 2[36G[1@ hheight 2)[23G[1@(*[23G[1@+([24G[1@ ((* width 2) (* height 2))))
+; readline-input:31:19: define: not an identifier, identifier with default, or
+;   keyword for procedure argument
+;   at: (+ (* width 2) (* height 2))
+;   in: (define (rect-perm (+ (* width 2) (* height 2))))
+; [,bt for context]
+> > (define (rect-perm (+ (* width 2) (* height 2)))))[51G[K
+  )
+; readline-input:32:19: define: not an identifier, identifier with default, or
+;   keyword for procedure argument
+;   at: (+ (* width 2) (* height 2))
+;   in: (define (rect-perm (+ (* width 2) (* height 2))))
+; [,bt for context]
+> > (define (rect-perm (+ (* width 2) (* height 2)))
+  )[A[51G)
+[K[A[52G)[51G[K[22G[1@w([23G[1@i([24G[1@d([25G[1@t([26G[1@h([27G[1@ ([28G[1@h([29G[1@e([30G[1@i([31G[1@g([32G[1@h([33G[1@t([34G[1@)([35G[1@ ((+ (* width 2) (* height 2)))
+> (rect-perm 45[15G[K 5)
+18
+> (define (line-la[18G[Kengtha[23G[Ka x1 x2 y1 y2[35G[K[34G[K[33G[32G[K[31G[K[30G[29G[K[28G[Ky1 x2 y2) ) [38G )[38G( )[39Gd )[40Gq )[40G )[K[39G )[K[39Gs )[40Gq )[40G )[K[39G )[K[39Gs )[40Gq )[41Gr )[42Gt )[44G )[44G( )[45G+ )[47G )[47G( )[48G) )[50G )[50G( )[51G) )[48G[1@e)[49G[1@x)[50G[1@p)[51G[1@t)[52G[1@ )) ([56Ge) )[57Gx) )[58Gp) )[59Gt) )[60G ) ) [53G[1@()[54G[1@-)[55G[1@ )[57G[1@) ) (expt [65G() )[66G-) )[67G ) )[69G) )) ) [56G[1@x)[57G[1@1)[58G[1@ )[59G[1@x)[60G[1@2))) (expt (- [73Gy)) )[74G1)) )[75G )) )[76Gy)) )[77G2)) )[62G[1@ )[63G[1@2)) (expt (- y1 y2)[81G ) )[82G2) )x2) 2) (expt (- y1 y2) 2) )
+  )
+  )
+> (line length[14G[K[13G[K[12G[K[11G[K[10G[K[9G[K[8G-length a[16G[K[15Ga 7 4 10 8)
+5
+> > (line-lengtha 7 4 10 8)> ([8@define ([25Gx1 y1 x2 y2) (sqrt (+ (expt (- x1 x2) 2) (expt (- y1 y2) 2) )
+  )
+  )[A  )[A[86G[35G[P)[34G[P)[33G[P)[32G[P)[31G[P)[30G[P)[29G[P)[28G[P)[27G[P)[26G[P)[23G[P [23G[1@b  [25G[1@'xx)[27G[1@ )[28G[1@')[29G[1@y)) (sqrt (+ (expt (- x1[26G[P [26G[1@p [27G[1@1  'y)[30G[P)[30G[1@p)[31G[1@1)[31G[P)[31G[1@2)) (sqrt (+ (expt (- x1[53G[P [52G[P [52G[1@( [53G[1@c [54G[1@a [55G[1@r [57G[1@ x[57G[1@p [58G[1@1 [59G[1@)  x2[62G[P)[62G[1@()[63G[1@c)[64G[1@a)[65G[1@r)[66G[1@ )[67G[1@p)[68G[1@2)[70G[1@) [61G[P((car p2)) 2) (expt (- y1y1[84G[P [83G[P [83G[1@( [84G[1@c [85G[1@d [86G[1@r [88G[1@ y[88G[1@p [89G[1@1 [90G[1@)  y2[93G[P)[92G[P)[92G[1@()[93G[1@c)[94G[1@d)
+[K
+
+  )[3A[95G[95Gr) 2)[K
+)[A[96G[96G ) 2)) )[A[97G[97Gp) 2 [101G) )[A[98G[98G2)[K
+2) )[A[99G[100G)2 2) )[A[100G
+
+
+
+; readline-input:40:26: define: duplicate argument identifier
+;   at: quote
+;   in: (define (line-lengthb (quote p1) (quote p2)) (sqrt (+ (expt (- (car p1)
+;     (car p2)) 2) (expt (- (cdr p1) (cdr p2)) 2))))
+; [,bt for context]
+> > (define (line-lengthb 'p1 'p2) (sqrt (+ (expt (- (car p1) (car p2)) 2) (expt (- (cdr p1) (cdr p2))  2) )
+  )
+  )[A  )[A[6G[A[100G[29G[Pp
+2) )[K[A[29G[25G[P[99G 22) )[K[A[25G
+
+
+
+> (line-lengthn2[16G[K[15G[Kb '(7 4) '(10 8))
+; -: contract violation
+;   expected: number?
+;   given: '(4)
+; [,bt for context]
+> > (line-lengthb '(7 4) '(10 8))> ([8@define ([25Gp1 p2) (sqrt (+ (expt (- (car p1) (car p2)) 2) (expt (- (cdr p1) (cdr p2)) 2 ) )
+  )
+  )[A  )[A) )[A[100G[25G'p1 'p2) (sqrt (+ (expt (- (car p1) (car p2)) 2) (expt (- (cdr p1) (cdr p2)))[101G 2) )
+
+  )[3A[25Gp1 p2) (sqrt (+ (expt (- (car p1) (car p2)) 2) (expt (- (cdr p1) (cdr p2)) 2 [101G) )[K
+
+  )[A  )[A) )[A[100G[82G[1@([100G[K
+2) )[A[82G[82G[1@c(
+ 2) )[A[83G[83G[1@a[100G) [K[1@) [A[84G[84G[1@r
+)[1@) [A[85G[85G[1@ 
+[1@2)[A[86G(cdr p1)[94G[1@)[100G[K
+[1@p2[A[94G) [97G(cdrp[1@ p[A[97G[97Gc(cd [101G[1@r [A[98G[98Ga(cr[101G[1@dr[A[99G[99Gr(d[101G[1@cd[A[100G[100G[K
+[1@(c(cdr p2)) 2) )[10G[1@) 
+
+
+> > (define (line-lengthb p1 p2) (sqrt (+ (expt (- (car p1) (car p2)) 2) (expt (- (car (cdr p1)) (car
+(cdr p2))) 2) )
+  )
+  )[3A> ([8P[17G'(7 4) '(10 8))[K
+[K
+[K
+[K[3A[32G
+5
+> ; user break [,bt for context]
+
+
+> ^D
+[?2004hjdavis75@remote01:~/i471a/submit/lab3$ [?2004l
+exit
+
+Script done on 2023-09-14 14:30:26-04:00 [COMMAND_EXIT_CODE="0"]
