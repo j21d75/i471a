@@ -22,7 +22,18 @@
 ;; *Hint*: use number? and equal? along with list accessor functions
 
 (define (eval-expr1 expr)
- 0)   
+ (cond 
+   ((number? expr)
+    expr)
+   ((equal? 'add (car expr))
+    (+ (eval-expr1(list-ref expr 1)) (eval-expr1(list-ref expr 2))))
+   ((equal? 'mul (car expr))
+    (* (eval-expr1(list-ref expr 1)) (eval-expr1(list-ref expr 2))))
+   ((equal? 'sub (car expr))
+    (- (eval-expr1(list-ref expr 1)) (eval-expr1(list-ref expr 2))))
+   ((equal? 'uminus (car expr))
+    (- (eval-expr1(list-ref expr 1))))
+  ))   
 	 
 (check-equal? (eval-expr1 42) 42)
 (check-equal? (eval-expr1 '(add 20 22)) 42)
@@ -38,7 +49,18 @@
 ;;
 ;; *Hint*: use list to build lists
 (define (compile-expr1 expr)
- 0)
+ (cond 
+   ((number? expr)
+    expr)
+   ((equal? 'add (car expr))
+    (list '+ (compile-expr1(list-ref expr 1)) (compile-expr1(list-ref expr 2))))
+   ((equal? 'mul (car expr))
+    (list '* (compile-expr1(list-ref expr 1)) (compile-expr1(list-ref expr 2))))
+   ((equal? 'sub (car expr))
+    (list '- (compile-expr1(list-ref expr 1)) (compile-expr1(list-ref expr 2))))
+   ((equal? 'uminus (car expr))
+    (list '- (compile-expr1(list-ref expr 1)))
+  )))   
 
 (check-equal? (compile-expr1 42) 42)
 (check-equal? (compile-expr1 '(add 20 22)) '(+ 20 22))
@@ -86,7 +108,20 @@
 ;; *Hint*: use assoc and symbol?.
 
 (define (eval-expr2 expr env)
- 0)
+ (cond 
+   ((number? expr)
+    expr)
+   ((symbol? expr)
+    (list-ref (assoc expr env) 1))
+   ((equal? 'add (car expr))
+    (+ (eval-expr2(list-ref expr 1) env) (eval-expr2(list-ref expr 2) env)))
+   ((equal? 'mul (car expr))
+    (* (eval-expr2(list-ref expr 1) env) (eval-expr2(list-ref expr 2) env)))
+   ((equal? 'sub (car expr))
+    (- (eval-expr2(list-ref expr 1) env) (eval-expr2(list-ref expr 2) env)))
+   ((equal? 'uminus (car expr))
+    (- (eval-expr2(list-ref expr 1) env)))
+   ))
    
 (check-equal? (eval-expr2 42 '()) 42)
 (check-equal? (eval-expr2 '(add 20 22) '()) 42)
@@ -106,9 +141,25 @@
 ;; Like compile-expr1, but allow env lookup for SYMBOL's as in eval-expr2.
 ;; Compile into a suitable let expression, using an auxiliary function
 ;; similar to compile-expr1
-(define (compile-expr2 expr env)
-  0)
 
+(define (compile-expr2 expr env)
+  (list 'let env (ex4help expr env)))
+
+(define (ex4help expr env)
+ (cond 
+   ((number? expr)
+    expr)
+   ((symbol? expr)
+    expr)
+   ((equal? 'add (car expr))
+    (list '+ (ex4help(list-ref expr 1) env) (ex4help(list-ref expr 2) env)))
+   ((equal? 'mul (car expr))
+    (list '* (ex4help(list-ref expr 1) env) (ex4help(list-ref expr 2) env)))
+   ((equal? 'sub (car expr))
+    (list '- (ex4help(list-ref expr 1) env) (ex4help(list-ref expr 2) env)))
+   ((equal? 'uminus (car expr))
+    (list '- (ex4help(list-ref expr 1) env))
+  )))   
 
 (check-equal? (compile-expr2 'a '((a 42))) '(let ((a 42)) a))
 (check-equal? (compile-expr2 '(add a a) '((a 22))) '(let ((a 22)) (+ a a)))
