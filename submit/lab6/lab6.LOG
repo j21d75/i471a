@@ -1,0 +1,161 @@
+Script started on 2023-10-05 10:33:48-04:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="80" LINES="24"]
+[?2004hjdavis75@remote01:~/i471a/submit/lab6$ [Kjdavis75@remote01:~/i471a/submit/lab6$ prolog
+[?2004lWelcome to SWI-Prolog (threaded, 64 bits, version 9.0.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- f(X, a[10G)[5G[11G = f(a, Y[20G)[15G[21G.
+X = Y, Y = a.
+
+?- f(X, a[10G)[5G[11G = f(a, X[20G)[15G[21G.
+X = a.
+
+?- f(X, a[10G)[5G[11G = f(b, X[20G)[15G[21G.
+[1;31mfalse.[0m
+
+?- f(X, Y[10G)[5G[11G = f(a, a[20G)[15G[21G, g(X, Y[29G)[24G[30G = g(a, b[39G)[34G[40G.
+[1;31mfalse.[0m
+
+?- f(_, _, X[13G)[5G[14G = f(1, 2, z[26G)[18G[27G.
+X = z.
+
+?- headi[8G[K(_, tail(X, _[21G)[16G[22G, _[25G)[8G[26G = head(a, tail(z, B[46G)[41G[47G, Y[50G)[33G[51G.
+X = z.
+
+?- ca?- c[Kons(_,cons(_,cons(_,X[26G)[22G[27G[27G)[15G[28G[28G)[8G[29G = cons(a, cons(b, cons(c, z[57G)[52G[58G[58G)[44G[59G[59G)[36G[60G.
+X = z.
+
+?- length([a,b[15G][11G[16G[16G)[10G[17G.
+[1;31mERROR: Unknown procedure: length/1
+ERROR:     However, there are definitions for:
+ERROR:         length/2
+[0m[1;31mfalse.[0m
+
+?- ?- length([a,b]).[16G,).[17G ).[18GL).
+L = 2.
+
+?- ?- length([a,b], L).[13G[Pb[13G[1@|bb
+[1;31mERROR: Type error: `list' expected, found `[a|b]' (a compound)
+ERROR: In:
+ERROR:   [11] [34mthrow(error(type_error(list,...),context(...,_53310)))[0m[0m[1;31m
+ERROR:    [9] [34mtoplevel_call(user:user: ...)[0m[0m[1;31m at /usr/lib/swi-prolog/boot/toplevel.pl:1173
+ERROR: 
+ERROR: Note: some frames are missing due to last-call optimization.
+ERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+[0m?- ?- length([a|b], L).[16G[1@],[11G[16G[14G[1@[b
+L = 2.
+
+?- ?- length([a|[b]], L).[16G[1@|][17G[1@c]
+[1;31mERROR: Type error: `list' expected, found `[a,b|c]' (a compound)
+ERROR: In:
+ERROR:   [11] [34mthrow(error(type_error(list,...),context(...,_3414)))[0m[0m[1;31m
+ERROR:    [9] [34mtoplevel_call(user:user: ...)[0m[0m[1;31m at /usr/lib/swi-prolog/boot/toplevel.pl:1173
+ERROR: 
+ERROR: Note: some frames are missing due to last-call optimization.
+ERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+[0m?- ?- length([a|[b|c]], L).[17G[P][17G[1@C][15G[P|[15G[1@B|[12G[P|[12G[1@A|
+C = [],
+L = 2 [1m;[0m
+C = [_],
+L = 3 [1m;[0m
+C = [_, _],
+L = 4 [1m.[0m
+
+?- [_|[_|X[11G][7G[12G[12G][4G[13G = [1,2,3,4[24G][16G[25G.
+X = [3, 4].
+
+?- ?- [_|[_|X]] = [1,2,3,4].[10G[P][10G[1@[][11G[1@X][12G[1@|][13G[1@_]][15G[1@}][15G[P][16G[1@] [7G[16G]]
+X = 3.
+
+?- [[_|X[9G][5G[10G|_[12G][4G[13G = [[1,2[21G][17G[22G,3,4[26G][16G[27G.
+X = [2].
+
+?- ^D
+[32m% halt
+[0m[?2004hjdavis75@remote01:~/i471a/submit/lab6$ ls -la
+[?2004ltotal 8
+drwxr-x---  2 jdavis75 jdavis75   52 Oct  5 10:33 .
+drwxr-x--- 11 jdavis75 jdavis75 4096 Oct  3 13:55 ..
+-rw-r-----  1 jdavis75 jdavis75    0 Oct  5 10:33 lab6.LOG
+-rw-r-----  1 jdavis75 jdavis75  590 Oct  3 16:03 lab6-sol.pro
+[?2004hjdavis75@remote01:~/i471a/submit/lab6$ cat lab6.LOG 
+[?2004l[?2004hjdavis75@remote01:~/i471a/submit/lab6$ vim ex1+2.txt
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;63r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[38;5;51m[48;5;16m[H[2J[?25l[63;1H"ex1+2.txt" [New][2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[1m[38;5;226m  1 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[2;1H[38;5;21m[48;5;16m~                                                                                                   [3;1H~                                                                                                   [4;1H~                                                                                                   [5;1H~                                                                                                   [6;1H~                                                                                                   [7;1H~                                                                                                   [8;1H~                                                                                                   [9;1H~                                                                                                   [10;1H~                                                                                                   [11;1H~                                                                                                   [12;1H~                                                                                                   [13;1H~                                                                                                   [14;1H~                                                                                                   [15;1H~                                                                                                   [16;1H~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [37;1H~                                                                                                   [38;1H~                                                                                                   [39;1H~                                                                                                   [40;1H~                                                                                                   [41;1H~                                                                                                   [42;1H~                                                                                                   [43;1H~                                                                                                   [44;1H~                                                                                                   [45;1H~                                                                                                   [46;1H~                                                                                                   [47;1H~                                                                                                   [48;1H~                                                                                                   [49;1H~                                                                                                   [50;1H~                                                                                                   [51;1H~                                                                                                   [52;1H~                                                                                                   [53;1H~                                                                                                   [54;1H~                                                                                                   [55;1H~                                                                                                   [56;1H~                                                                                                   [57;1H~                                                                                                   [58;1H~                                                                                                   [59;1H~                                                                                                   [60;1H~                                                                                                   [61;1H~                                                                                                   [m[38;5;51m[48;5;16m[62;1H[1m[38;5;16m[48;5;51m~/i471a/submit/lab6/ex1+2.txt                                                                       [1;5H[?25h[?4m[?25l[m[38;5;51m[48;5;16m[63;90Hi[1;5H[63;90H [1;5H[63;1H[1m-- INSERT --[m[38;5;51m[48;5;16m[63;13H[K[1;5H[?25h[?25l[38;5;226m  1 [m[38;5;51m[48;5;16m?- f(X, a) = f(a, Y).[1;26H[K[2;1H[38;5;226m  2 [m[38;5;51m[48;5;16mX = Y, Y = a.[2;18H[K[3;1H[38;5;226m  3 [m[38;5;51m[48;5;16m[3;5H[K[4;1H[38;5;226m  4 [m[38;5;51m[48;5;16m?- f(X, a) = f(a, X).[4;26H[K[5;1H[1m[38;5;226m  5 [m[38;5;51m[48;5;16m[48;5;237mX = a.                                                                                          [5;11H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m  5 [m[38;5;51m[48;5;16mX = a.[5;11H[K[6;1H[38;5;226m  6 [m[38;5;51m[48;5;16m[6;5H[K[7;1H[38;5;226m  7 [m[38;5;51m[48;5;16m?- f(X, a) = f(b, X).[7;26H[K[8;1H[38;5;226m  8 [m[38;5;51m[48;5;16mfalse.[8;11H[K[9;1H[38;5;226m  9 [m[38;5;51m[48;5;16m[9;5H[K[10;1H[1m[38;5;226m 10 [m[38;5;51m[48;5;16m[48;5;237m?- f(X, Y) = f(a, a), g(X, Y) = g(a,                                                            [10;41H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 10 [m[38;5;51m[48;5;16m?- f(X, Y) = f(a, a), g(X, Y) = g(a, b).[10;45H[K[11;1H[38;5;226m 11 [m[38;5;51m[48;5;16mfalse.[11;11H[K[12;1H[38;5;226m 12 [m[38;5;51m[48;5;16m[12;5H[K[13;1H[38;5;226m 13 [m[38;5;51m[48;5;16m?- f(_, _, X) = f(1, 2, z).[13;32H[K[14;1H[38;5;226m 14 [m[38;5;51m[48;5;16mX = z.[14;11H[K[15;1H[38;5;226m 15 [m[38;5;51m[48;5;16m[15;5H[K[16;1H[1m[38;5;226m 16 [m[38;5;51m[48;5;16m[48;5;237m?- head(_, tail(X                                                                               [16;22H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 16 [m[38;5;51m[48;5;16m?- head(_, tail(X, _), _) = head(a, tail(z, B), Y).[16;56H[K[17;1H[38;5;226m 17 [m[38;5;51m[48;5;16mX = z.[17;11H[K[18;1H[38;5;226m 18 [m[38;5;51m[48;5;16m[18;5H[K[19;1H[1m[38;5;226m 19 [m[38;5;51m[48;5;16m[48;5;237m?- cons(_,cons(_,cons(                                                                          [19;27H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 19 [m[38;5;51m[48;5;16m?- cons(_,cons(_,cons(_,X))) = cons(a, cons(b, cons(c, z))).[19;65H[K[20;1H[38;5;226m 20 [m[38;5;51m[48;5;16mX = z.[20;11H[K[21;1H[38;5;226m 21 [m[38;5;51m[48;5;16m[21;5H[K[22;1H[38;5;226m 22 [m[38;5;51m[48;5;16m?- length([a,b]).[22;22H[K[23;1H[1m[38;5;226m 23 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [23;5H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 23 [m[38;5;51m[48;5;16mERROR: Unknown procedure: length/1[23;39H[K[24;1H[1m[38;5;226m 24 [m[38;5;51m[48;5;16m[48;5;237mERROR:     However, there are                                                                   [24;34H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 24 [m[38;5;51m[48;5;16mERROR:     However, there are definitions for:[24;51H[K[25;1H[38;5;226m 25 [m[38;5;51m[48;5;16mERROR:         length/2[25;28H[K[26;1H[38;5;226m 26 [m[38;5;51m[48;5;16mfalse.[26;11H[K[27;1H[38;5;226m 27 [m[38;5;51m[48;5;16m[27;5H[K[28;1H[1m[38;5;226m 28 [m[38;5;51m[48;5;16m[48;5;237m?- length([a,b                                                                                  [28;19H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 28 [m[38;5;51m[48;5;16m?- length([a,b], L).[28;25H[K[29;1H[38;5;226m 29 [m[38;5;51m[48;5;16mL = 2.[29;11H[K[30;1H[38;5;226m 30 [m[38;5;51m[48;5;16m[30;5H[K[31;1H[38;5;226m 31 [m[38;5;51m[48;5;16m?- length([a|b], L).[31;25H[K[32;1H[1m[38;5;226m 32 [m[38;5;51m[48;5;16m[48;5;237mERROR: Type error: `list' e                                                                     [32;32H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 32 [m[38;5;51m[48;5;16mERROR: Type error: `list' expected, found `[a|b]' (a compound)[32;67H[K[33;1H[38;5;226m 33 [m[38;5;51m[48;5;16mERROR: In:[33;15H[K[34;1H[1m[38;5;226m 34 [m[38;5;51m[48;5;16m[48;5;237mERROR:   [11] th                                                                                [34;21H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 34 [m[38;5;51m[48;5;16mERROR:   [11] throw(error(type_error(list,...),context(...,_53310)))[34;73H[K[35;1H[1m[38;5;226m 35 [m[38;5;51m[48;5;16m[48;5;237mERROR:                                                                                          [35;15H[?25h[?25l[9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/t[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 35 [m[38;5;51m[48;5;16mERROR:    [9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[35;93H[K[36;1H[38;5;226m 36 [m[38;5;51m[48;5;16mERROR: [36;12H[K[37;1H[1m[38;5;226m 37 [m[38;5;51m[48;5;16m[48;5;237mERROR: Note: some frames are missing du                                                         [37;44H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 37 [m[38;5;51m[48;5;16mERROR: Note: some frames are missing due to last-call optimization.[37;72H[K[38;1H[1m[38;5;226m 38 [m[38;5;51m[48;5;16m[48;5;237mERROR: Re-run your program in debu                                                              [38;39H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 38 [m[38;5;51m[48;5;16mERROR: Re-run your program in debug mode (:- debug.) to get more detail.[38;77H[K[39;1H[38;5;226m 39 [m[38;5;51m[48;5;16m?- length([a|[b]], L).[39;27H[K[40;1H[1m[38;5;226m 40 [m[38;5;51m[48;5;16m[48;5;237mL                                                                                               [40;6H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 40 [m[38;5;51m[48;5;16mL = 2.[40;11H[K[41;1H[38;5;226m 41 [m[38;5;51m[48;5;16m[41;5H[K[42;1H[38;5;226m 42 [m[38;5;51m[48;5;16m?- length([a|[b|c]], L).[42;29H[K[43;1H[1m[38;5;226m 43 [m[38;5;51m[48;5;16m[48;5;237mERROR: Type error: `list' expec                                                                 [43;36H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 43 [m[38;5;51m[48;5;16mERROR: Type error: `list' expected, found `[a,b|c]' (a compound)[43;69H[K[44;1H[38;5;226m 44 [m[38;5;51m[48;5;16mERROR: In:[44;15H[K[45;1H[1m[38;5;226m 45 [m[38;5;51m[48;5;16m[48;5;237mERROR:   [11] th                                                                                [45;21H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 45 [m[38;5;51m[48;5;16mERROR:   [11] throw(error(type_error(list,...),context(...,_3414)))[45;72H[K[46;1H[1m[38;5;226m 46 [m[38;5;51m[48;5;16m[48;5;237mERROR:    [9                                                                                    [46;17H[?25h[?25l] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/topl[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 46 [m[38;5;51m[48;5;16mERROR:    [9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[46;93H[K[47;1H[38;5;226m 47 [m[38;5;51m[48;5;16mERROR: [47;12H[K[48;1H[1m[38;5;226m 48 [m[38;5;51m[48;5;16m[48;5;237mERROR: Note: some frames are missing due t                                                      [48;47H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 48 [m[38;5;51m[48;5;16mERROR: Note: some frames are missing due to last-call optimization.[48;72H[K[49;1H[1m[38;5;226m 49 [m[38;5;51m[48;5;16m[48;5;237mERROR: Re-run your program in debug m                                                           [49;42H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 49 [m[38;5;51m[48;5;16mERROR: Re-run your program in debug mode (:- debug.) to get more detail.[49;77H[K[50;1H[38;5;226m 50 [m[38;5;51m[48;5;16m?- length([A|[B|C]], L).[50;29H[K[51;1H[1m[38;5;226m 51 [m[38;5;51m[48;5;16m[48;5;237mC                                                                                               [51;7H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 51 [m[38;5;51m[48;5;16mC = [],[51;12H[K[52;1H[38;5;226m 52 [m[38;5;51m[48;5;16mL = 2 ;[52;12H[K[53;1H[38;5;226m 53 [m[38;5;51m[48;5;16mC = [_],[53;13H[K[54;1H[38;5;226m 54 [m[38;5;51m[48;5;16mL = 3 ;[54;12H[K[55;1H[38;5;226m 55 [m[38;5;51m[48;5;16mC = [_, _],[55;16H[K[56;1H[38;5;226m 56 [m[38;5;51m[48;5;16mL = 4 .[56;12H[K[57;1H[38;5;226m 57 [m[38;5;51m[48;5;16m[57;5H[K[58;1H[1m[38;5;226m 58 [m[38;5;51m[48;5;16m[48;5;237m?- [_|[_|X]                                                                                     [58;16H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m 58 [m[38;5;51m[48;5;16m?- [_|[_|X]] = [1,2,3,4].[58;30H[K[59;1H[38;5;226m 59 [m[38;5;51m[48;5;16mX = [3, 4].[59;16H[K[60;1H[38;5;226m 60 [m[38;5;51m[48;5;16m[60;5H[K[61;1H[38;5;226m 61 [m[38;5;51m[48;5;16m?- [_|[_|[X|_]]] = [1,2,3,4].[61;34H[K[1;61r[61;1H
+[1;63r[61;1H[1m[38;5;226m 62 [m[38;5;51m[48;5;16m[48;5;237mX = 3                                                                                           [m[38;5;51m[48;5;16m[63;11H[1m(paste) --[61;10H[?25h[?25l[1;61r[m[38;5;51m[48;5;16m[1;1H[5M[1;63r[56;1H[38;5;226m 62 [m[38;5;51m[48;5;16mX = 3.[56;11H[K[57;1H[38;5;226m 63 
+ 64 [m[38;5;51m[48;5;16m?- [[_|X]|_] = [[1,2],3,4].
+[38;5;226m 65 [m[38;5;51m[48;5;16mX = [2].
+[38;5;226m 66 [m[38;5;51m[48;5;16m
+[1m[38;5;226m 67 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[63;11H[1m--a[m[38;5;51m[48;5;16m[63;13H[K[61;5H[?25h[?25l[63;1H[K[61;5H[?25h[?25l[63;90H:[61;5H[63;90H[K[63;1H:[?25hx[?25l[?2004l[>4;m"ex1+2.txt" [New] 67L, 1507B written[23;2t[23;1t
+[39;49m[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004hjdavis75@remote01:~/i471a/submit/lab6$ ls
+[?2004lex1+2.txt  lab6.LOG  lab6-sol.pro
+[?2004hjdavis75@remote01:~/i471a/submit/lab6$ lsvim ex1+2.txt
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;63r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[38;5;51m[48;5;16m[H[2J[?25l[63;1H"ex1+2.txt" 67L, 1507B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[38;5;226m  7 [m[38;5;51m[48;5;16m?- f(X, a) = f(b, X).
+[38;5;226m  8 [m[38;5;51m[48;5;16mfalse.[2;11H[K[3;1H[38;5;226m  9 [m[38;5;51m[48;5;16m[3;5H[K[4;1H[38;5;226m 10 [m[38;5;51m[48;5;16m?- f(X, Y) = f(a, a), g(X, Y) = g(a, b).
+[38;5;226m 11 [m[38;5;51m[48;5;16mfalse.
+[38;5;226m 12 
+ 13 [m[38;5;51m[48;5;16m?- f(_, _, X) = f(1, 2, z).
+[38;5;226m 14 [m[38;5;51m[48;5;16mX = z.
+[38;5;226m 15 
+ 16 [m[38;5;51m[48;5;16m?- head(_, tail(X, _), _) = head(a, tail(z, B), Y).
+[38;5;226m 17 [m[38;5;51m[48;5;16mX = z.
+[38;5;226m 18 
+ 19 [m[38;5;51m[48;5;16m?- cons(_,cons(_,cons(_,X))) = cons(a, cons(b, cons(c, z))).
+[38;5;226m 20 [m[38;5;51m[48;5;16mX = z.
+[38;5;226m 21 
+ 22 [m[38;5;51m[48;5;16m?- length([a,b]).
+[38;5;226m 23 [m[38;5;51m[48;5;16mERROR: Unknown procedure: length/1
+[38;5;226m 24 [m[38;5;51m[48;5;16mERROR:     However, there are definitions for:
+[38;5;226m 25 [m[38;5;51m[48;5;16mERROR:[9Clength/2
+[38;5;226m 26 [m[38;5;51m[48;5;16mfalse.
+[38;5;226m 27 
+ 28 [m[38;5;51m[48;5;16m?- length([a,b], L).
+[38;5;226m 29 [m[38;5;51m[48;5;16mL = 2.
+[38;5;226m 30 
+ 31 [m[38;5;51m[48;5;16m?- length([a|b], L).
+[38;5;226m 32 [m[38;5;51m[48;5;16mERROR: Type error: `list' expected, found `[a|b]' (a compound)
+[38;5;226m 33 [m[38;5;51m[48;5;16mERROR: In:
+[38;5;226m 34 [m[38;5;51m[48;5;16mERROR:   [11] throw(error(type_error(list,...),context(...,_53310)))
+[38;5;226m 35 [m[38;5;51m[48;5;16mERROR:    [9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173
+[38;5;226m 36 [m[38;5;51m[48;5;16mERROR:
+[38;5;226m 37 [m[38;5;51m[48;5;16mERROR: Note: some frames are missing due to last-call optimization.
+[38;5;226m 38 [m[38;5;51m[48;5;16mERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+[38;5;226m 39 [m[38;5;51m[48;5;16m?- length([a|[b]], L).
+[38;5;226m 40 [m[38;5;51m[48;5;16mL = 2.
+[38;5;226m 41 
+ 42 [m[38;5;51m[48;5;16m?- length([a|[b|c]], L).
+[38;5;226m 43 [m[38;5;51m[48;5;16mERROR: Type error: `list' expected, found `[a,b|c]' (a compound)
+[38;5;226m 44 [m[38;5;51m[48;5;16mERROR: In:
+[38;5;226m 45 [m[38;5;51m[48;5;16mERROR:   [11] throw(error(type_error(list,...),context(...,_3414)))
+[38;5;226m 46 [m[38;5;51m[48;5;16mERROR:    [9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173
+[38;5;226m 47 [m[38;5;51m[48;5;16mERROR:
+[38;5;226m 48 [m[38;5;51m[48;5;16mERROR: Note: some frames are missing due to last-call optimization.
+[38;5;226m 49 [m[38;5;51m[48;5;16mERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+[38;5;226m 50 [m[38;5;51m[48;5;16m?- length([A|[B|C]], L).
+[38;5;226m 51 [m[38;5;51m[48;5;16mC = [],
+[38;5;226m 52 [m[38;5;51m[48;5;16mL = 2 ;
+[38;5;226m 53 [m[38;5;51m[48;5;16mC = [_],
+[38;5;226m 54 [m[38;5;51m[48;5;16mL = 3 ;
+[38;5;226m 55 [m[38;5;51m[48;5;16mC = [_, _],
+[38;5;226m 56 [m[38;5;51m[48;5;16mL = 4 .
+[38;5;226m 57 
+ 58 [m[38;5;51m[48;5;16m?- [_|[_|X]] = [1,2,3,4].
+[38;5;226m 59 [m[38;5;51m[48;5;16mX = [3, 4].
+[38;5;226m 60 
+ 61 [m[38;5;51m[48;5;16m?- [_|[_|[X|_]]] = [1,2,3,4].
+[38;5;226m 62 [m[38;5;51m[48;5;16mX = 3.
+[38;5;226m 63 
+ 64 [m[38;5;51m[48;5;16m?- [[_|X]|_] = [[1,2],3,4].
+[38;5;226m 65 [m[38;5;51m[48;5;16mX = [2].
+[38;5;226m 66 [m[38;5;51m[48;5;16m
+[1m[38;5;226m 67 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[62;1H[1m[38;5;16m[48;5;51m~/i471a/submit/lab6/ex1+2.txt                                                                       [61;5H[?25h[?4m[?25l[m[38;5;51m[48;5;16m[63;90H~@k[61;5H[63;90H   [60;5H[1m[38;5;226m 66 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[61;1H[38;5;226m 67 [m[38;5;51m[48;5;16m[61;5H[K[60;5H[?25h[?25l[63;90H~@k[60;5H[63;90H   [59;5H[1m[38;5;226m 65 [m[38;5;51m[48;5;16m[48;5;237mX = [2].                                                                                        [m[38;5;51m[48;5;16m[60;1H[38;5;226m 66 [m[38;5;51m[48;5;16m[60;5H[K[59;5H[?25h[?25l[63;90Hg[59;5H[?25h[?25l[63;90H [59;5H[63;90Hgg[59;5H[63;90H  [1;5H[1;61r[1;1H[6L[1;63r[1;1H[1m[38;5;226m  1 [m[38;5;51m[48;5;16m[48;5;237m?- f(X, a) = f(a, Y).                                                                           [m[38;5;51m[48;5;16m[2;1H[38;5;226m  2 [m[38;5;51m[48;5;16mX = Y, Y = a.
+[38;5;226m  3 
+  4 [m[38;5;51m[48;5;16m?- f(X, a) = f(a, X).
+[38;5;226m  5 [m[38;5;51m[48;5;16mX = a.
+[38;5;226m  6 [m[38;5;51m[48;5;16m[63;1H[K[1;5H[?25h[?25l[63;90HI[1;5H[63;90H [1;5H[63;1H[1m-- INSERT --[1;5H[?25h[?25l[m[38;5;51m[48;5;16m[38;5;226m  1 [m[38;5;51m[48;5;16m[1;5H[K[2;1H[1m[38;5;226m  2 [m[38;5;51m[48;5;16m[48;5;237m?- f(X, a) = f(a, Y).                                                                           [m[38;5;51m[48;5;16m[3;5HX = Y, Y = a.[4;5H[K[5;5H?- f(X, a) = f(a, X).[6;5HX = a.[7;5H[K[8;5H?- f(X, a) = f(b, X).[9;5Hfalse.[10;5H[K[11;5H?- f(X, Y) = f(a, a), g(X, Y) = g(a, b).[12;5Hfalse.[13;5H[K[14;5H?- f(_, _, X) = f(1, 2, z).[15;5HX = z.[16;5H[K[17;5H?- head(_, tail(X, _), _) = head(a, tail(z, B), Y).[18;5HX = z.[19;5H[K[20;5H?- cons(_,cons(_,cons(_,X))) = cons(a, cons(b, cons(c, z))).[21;5HX = z.[22;5H[K[23;5H?- length([a,b]).[23;22H[K[24;12HUnknown procedure: length/1[24;39H[K[25;16HHowever, there are definitions for:[26;5HERROR:[9Clength/2[27;5Hfalse.[28;5H[K[29;5H?- length([a,b], L).[30;5HL = 2.[31;5H[K[32;5H?- length([a|b], L).[32;25H[K[33;12HType error: `list' expected, found `[a|b]' (a compound)[34;12HIn:[34;15H[K[35;14H[11] throw(error(type_error(list,...),context(...,_53310)))[35;73H[K[36;15H[9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[37;12H[K[38;12HNote: some frames are missing due to last-call optimization.[38;72H[K[39;5HERROR: Re-run your program in debug mode (:- debug.) to get more detail.[40;5H?- length([a|[b]], L).[41;5HL = 2.[42;5H[K[43;5H?- length([a|[b|c]], L).[43;29H[K[44;12HType error: `list' expected, found `[a,b|c]' (a compound)[45;12HIn:[45;15H[K[46;14H[11] throw(error(type_error(list,...),context(...,_3414)))[46;72H[K[47;15H[9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[48;12H[K[49;12HNote: some frames are missing due to last-call optimization.[49;72H[K[50;5HERROR: Re-run your program in debug mode (:- debug.) to get more detail.[51;5H?- length([A|[B|C]], L).[52;5HC = [],[53;5HL = 2 ;[53;12H[K[54;5HC = [_],[55;5HL = 3 ;[55;13H[K[56;5HC = [_, _],[57;5HL = 4 .[58;5H[K[59;5H?- [_|[_|X]] = [1,2,3,4].[60;5HX = [3, 4].[61;5H[K[2;5H[?25h[?25l[38;5;226m  2 [m[38;5;51m[48;5;16m[2;5H[K[3;1H[1m[38;5;226m  3 [m[38;5;51m[48;5;16m[48;5;237m?- f(X, a) = f(a, Y).                                                                           [m[38;5;51m[48;5;16m[4;5HX = Y, Y = a.[5;5H[K[6;5H?- f(X, a) = f(a, X).[7;5HX = a.[8;5H[K[9;5H?- f(X, a) = f(b, X).[10;5Hfalse.[11;5H[K[12;5H?- f(X, Y) = f(a, a), g(X, Y) = g(a, b).[13;5Hfalse.[14;5H[K[15;5H?- f(_, _, X) = f(1, 2, z).[16;5HX = z.[17;5H[K[18;5H?- head(_, tail(X, _), _) = head(a, tail(z, B), Y).[19;5HX = z.[20;5H[K[21;5H?- cons(_,cons(_,cons(_,X))) = cons(a, cons(b, cons(c, z))).[22;5HX = z.[23;5H[K[24;5H?- length([a,b]).[24;22H[K[25;12HUnknown procedure: length/1[25;39H[K[26;16HHowever, there are definitions for:[27;5HERROR:[9Clength/2[28;5Hfalse.[29;5H[K[30;5H?- length([a,b], L).[31;5HL = 2.[32;5H[K[33;5H?- length([a|b], L).[33;25H[K[34;12HType error: `list' expected, found `[a|b]' (a compound)[35;12HIn:[35;15H[K[36;14H[11] throw(error(type_error(list,...),context(...,_53310)))[36;73H[K[37;15H[9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[38;12H[K[39;12HNote: some frames are missing due to last-call optimization.[39;72H[K[40;5HERROR: Re-run your program in debug mode (:- debug.) to get more detail.[41;5H?- length([a|[b]], L).[42;5HL = 2.[43;5H[K[44;5H?- length([a|[b|c]], L).[44;29H[K[45;12HType error: `list' expected, found `[a,b|c]' (a compound)[46;12HIn:[46;15H[K[47;14H[11] throw(error(type_error(list,...),context(...,_3414)))[47;72H[K[48;15H[9] toplevel_call(user:user: ...) at /usr/lib/swi-prolog/boot/toplevel.pl:1173[49;12H[K[50;12HNote: some frames are missing due to last-call optimization.[50;72H[K[51;5HERROR: Re-run your program in debug mode (:- debug.) to get more detail.[52;5H?- length([A|[B|C]], L).[53;5HC = [],[54;5HL = 2 ;[54;12H[K[55;5HC = [_],[56;5HL = 3 ;[56;13H[K[57;5HC = [_, _],[58;5HL = 4 .[59;5H[K[60;5H?- [_|[_|X]] = [1,2,3,4].[61;5HX = [3, 4].[3;5H[?25h[?25l[2;1H[1m[38;5;226m  2 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[3;1H[38;5;226m  3 [m[38;5;51m[48;5;16m?- f(X, a) = f(a, Y).[3;26H[K[2;5H[?25h[?25l[1;1H[1m[38;5;226m  1 [m[38;5;51m[48;5;16m[48;5;237m                                                                                                [m[38;5;51m[48;5;16m[2;1H[38;5;226m  2 [m[38;5;51m[48;5;16m[2;5H[K[1;5H[?25h[?25l[48;5;237mL[?25h[?25lo[?25h[?25lg[?25h[?25l [?25h[?25li[?25h[?25ls[?25h[?25ln[?25h[?25lt[?25h[?25l [?25h[?25ls[?25h[?25la[?25h[?25lv[?25h[?25li[?25h[?25ln[?25h[?25lg[?25h[?25l [?25h[?25li[?25h[?25l [?25h[?25l[?25h[?25l,[?25h[?25l [?25h[?25lt[?25h[?25lh[?25h[?25li[?25h[?25ls[?25h[?25l [?25h[?25li[?25h[?25ls[?25h[?25l [?25h[?25lw[?25h[?25lh[?25h[?25la[?25h[?25lt[?25h[?25l [?25h[?25lw[?25h[?25la[?25h[?25ls[?25h[?25l [?25h[?25lr[?25h[?25lu[?25h[?25ln[?25h[?25l [?25h[?25li[?25h[?25ln[?25h[?25l [?25h[?25lt[?25h[?25lh[?25h[?25le[?25h[?25l [?25h[?25li[?25h[?25ln[?25h[?25lt[?25h[?25le[?25h[?25lr[?25h[?25lp[?25h[?25lr[?25h[?25le[?25h[?25lt[?25h[?25le[?25h[?25lr[?25h[?25l[m[38;5;51m[48;5;16m[63;1H[K[1;60H[?25h[?25l[63;90H:[1;60H[63;90H[K[63;1H:[?25hx[?25l[?2004l[>4;m"ex1+2.txt" 69L, 1565B written[23;2t[23;1t
+[39;49m[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004hjdavis75@remote01:~/i471a/submit/lab6$ [?2004l
+exit
+
+Script done on 2023-10-05 10:41:38-04:00 [COMMAND_EXIT_CODE="0"]
