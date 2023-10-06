@@ -114,7 +114,7 @@
    ((symbol? expr)
     (if (assoc expr env)
     (list-ref (assoc expr env) 1)
-    'NOTFOUND))
+    (error expr "undefined")))
    ((equal? 'add (car expr))
     (+ (eval-expr2(list-ref expr 1) env) (eval-expr2(list-ref expr 2) env)))
    ((equal? 'mul (car expr))
