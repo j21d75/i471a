@@ -8,9 +8,15 @@
 % 3-elements lists containing successive triples of List whose length
 % must be divisible by 3.  The procedure should fail if the length of
 % List is not divisible by 3.
-triples(_List, _Triples) :- 'TODO'.
 
-:-begin_tests(triples, [blocked('TODO')]).
+triples([],[]).
+
+triples([A, B, C | Other], [[A,B,C] | OtherTrip]) :-
+    length(Other, N),
+    N mod 3 =:= 0,
+    triples(Other, OtherTrip).
+
+:-begin_tests(triples).
 test(empty, [nondet]) :-
     triples([], []).
 test(triples1, [nondet]) :-
@@ -36,9 +42,13 @@ test(triples1, [fail]) :-
 % split(List, Prefix, Suffix) should succeed iff Prefix
 % matches a non-empty prefix of List with Suffix matching the rest
 % of List.
-split(_List, _Prefix, _Suffix) :- 'TODO'.
 
-:-begin_tests(split, [blocked('TODO')]).
+split([A | Suffix],[A],Suffix).
+
+split([A | Other], [A | Prefix], Suffix) :-
+    split(Other, Prefix, Suffix).
+
+:-begin_tests(split).
 test(prefix1, [nondet]) :-
     split([1, 2, 3, 4], [1], [2, 3, 4]).
 test(prefix2, [nondet]) :-
@@ -69,9 +79,15 @@ test(all, [set([Prefix, Suffix] ==
 % procedure should fail if the length of List is not divisible by N.
 %
 % Hint: use split/3 and length/2.
-n_tuples(_List, _N, _NTuples) :- 'TODO'.
 
-:-begin_tests(n_tuples, [blocked('TODO')]).
+n_tuples([], _N, []).
+
+n_tuples(List, N, [B | NTuples]) :-
+    length(B, N),
+    split(List, B, Other),
+    n_tuples(Other, N, NTuples).    
+
+:-begin_tests(n_tuples).
 test(empty1, [nondet]) :-
     n_tuples([], 1, []).
 test(empty4, [nondet]) :-
@@ -97,9 +113,13 @@ test(tuples3_fail, [fail]) :-
 % non-empty sub-list of List.
 %
 % Hint: use split/3 to extract prefix of suffixes of list.
-sublist(_List, _SubList) :- 'TODO'.
 
-:-begin_tests(sublist, [blocked('TODO')]).
+sublist(List, Sublist) :- 
+    append(Prefix, _, List),
+    append(_, Sublist, Prefix),
+    Sublist  \= [].
+
+:-begin_tests(sublist).
 test(prefix1, [nondet]) :-
     sublist([1, 2, 3, 4], [1]).
 test(prefix3, [nondet]) :-
@@ -139,9 +159,31 @@ test(all, [set(Z == [[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]])]) :-
 %
 % Hint: use the Prolog predicate number(N) which succeeds iff N is a
 % number.
-eval_expr1(_Expr, _Value) :- 'TODO'.
 
-:-begin_tests(eval_expr1, [blocked('TODO')]).
+eval_expr1(Expr, Value) :-
+    number(Expr),
+    Value is Expr.
+
+eval_expr1(add(A,B), Value) :- 
+    eval_expr1(A, Val1),
+    eval_expr1(B, Val2),
+    Value is Val1 + Val2.
+
+eval_expr1(sub(A,B), Value) :- 
+    eval_expr1(A, Val1),
+    eval_expr1(B, Val2),
+    Value is Val1 - Val2.
+
+eval_expr1(mul(A,B), Value) :- 
+    eval_expr1(A, Val1),
+    eval_expr1(B, Val2),
+    Value is Val1 * Val2.
+
+eval_expr1(uminus(A), Value) :- 
+    eval_expr1(A, Val1),
+    Value is - Val1.
+
+:-begin_tests(eval_expr1).
 test(42, [true(Z == 42)]) :-
     eval_expr1(42, Z).
 test(add, [true(Z == 55)]) :-
@@ -170,9 +212,35 @@ test(compound, [true(Z == -200)]):-
 %
 % Hints: use atom(A) to check if A is an atom and member/2 to lookup
 % an atom in an Env.
-eval_expr2(_Expr, _Env, _Value) :- 'TODO'.
 
-:-begin_tests(eval_expr2, [blocked('TODO')]).
+eval_expr2(Expr, _Env, Value) :-
+    number(Expr),
+    Value is Expr.
+
+eval_expr2(Expr, Env, Value) :-
+    atom(Expr),
+    member(Expr=Value, Env).
+
+eval_expr2(add(A,B), Env, Value) :- 
+    eval_expr2(A, Env, Val1),
+    eval_expr2(B, Env, Val2),
+    Value is Val1 + Val2.
+
+eval_expr2(sub(A,B), Env, Value) :- 
+    eval_expr2(A, Env, Val1),
+    eval_expr2(B, Env, Val2),
+    Value is Val1 - Val2.
+
+eval_expr2(mul(A,B), Env, Value) :- 
+    eval_expr2(A, Env, Val1),
+    eval_expr2(B, Env, Val2),
+    Value is Val1 * Val2.
+
+eval_expr2(uminus(A), Env, Value) :- 
+    eval_expr2(A, Env, Val1),
+    Value is - Val1.
+
+:-begin_tests(eval_expr2).
 test(42, [nondet, true(Z == 42)]) :-
     eval_expr2(42, [a=10, b=5],  Z).
 test(atom, [nondet, true(Z == 10)]) :-
@@ -206,10 +274,33 @@ test(internal_fail, [fail]) :-
 %
 % regex_match(Regex, String): should succeed iff regex Regex matches
 % the entire "string" String.
-regex_match(_Regex, _String) :- 'TODO'.
 
-:-begin_tests(regex_match, [blocked('TODO')]).
+regex_match(Regex, String) :- 
+    regex_match(Regex, String, []).
 
+regex_match(Regex, [Regex|Leftover], Leftover) :-
+    atom(Regex).
+    
+regex_match(Regex, [A|As], As) :-
+    member(A, Regex).
+
+regex_match(cat(A,B), String, Leftover) :-
+    regex_match(A, String, Leftover1),
+    regex_match(B, Leftover1, Leftover).
+
+regex_match(alt(A,_B), String, Leftover) :-
+    regex_match(A, String, Leftover).
+
+regex_match(alt(_A,B), String, Leftover) :-
+    regex_match(B, String, Leftover).
+
+regex_match(closure(_A), String, String).
+
+regex_match(closure(A), String, Leftover) :-
+    regex_match(A, String, Leftover1),
+    regex_match(closure(A), Leftover1, Leftover).
+    
+:-begin_tests(regex_match).
 % regex /a/ matches "a".
 test(atom, [nondet]) :-  
     regex_match(a, [a]).
