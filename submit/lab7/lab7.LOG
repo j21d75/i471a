@@ -1,0 +1,181 @@
+Script started on 2023-11-01 12:52:17-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="100" LINES="63"]
+[?2004hjdavis75@remote07:~/i471a/submit/lab7$ [?2004l
+exit
+
+Script done on 2023-11-01 12:53:15-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2023-11-01 12:55:23-04:00 [TERM="tmux-256color" TTY="/dev/pts/5" COLUMNS="100" LINES="62"]
+[?2004hjdavis75@remote07:~/i471a/submit/lab7$ rm labN.LOG 
+[?2004l[?2004hjdavis75@remote07:~/i471a/submit/lab7$ rm labN.LOG [8Pghci --start GHC REPL[K
+[?2004lGHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+[?1h=ghci> E[?1l>[?1h=ghci> :l "lab7-sopl[K[Kl.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :t addE[?1l>add :: Num a => a -> a -> a
+[?1h=ghci> :t plusE[?1l>plus :: Integer -> Integer -> Integer
+[?1h=ghci> :t concE[?1l>conc :: [a] -> [a] -> [a]
+[?1h=ghci> add 2.0 3.0E[?1l>5.0
+[?1h=ghci> plus 2.0 3.0E[?1l>
+[;1m<interactive>:6:6: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Fractional Integer)
+        arising from the literal ‘2.0’
+    • In the first argument of ‘plus’, namely ‘2.0’
+      In the expression: plus 2.0 3.0
+      In an equation for ‘it’: it = plus 2.0 3.0[0m[0m
+[?1h=ghci> conc [1] [2, 3]E[?1l>[1,2,3]
+[?1h=ghci> conc [[1]] [[2,3[K 3]]E[?1l>[[1],[2,3]]
+[?1h=ghci> conc "helloo" "world"E[?1l>"hellooworld"
+[?1h=ghci> conc ["hello"] ["world"]E[?1l>["hello","world"]
+[?1h=ghci> conc (conc ["hello"] ["wolrd[K[K[Krld']) ['good[K[K[K[K[K"goodbye"]E[?1l>
+[;1m<interactive>:11:44: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    lexical error in string/character literal at end of input[0m[0m
+[?1h=ghci> conc (conc ][K["hello"] ["world"]) [42]E[?1l>
+[;1m<interactive>:12:34: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num String) arising from the literal ‘42’
+    • In the expression: 42
+      In the second argument of ‘conc’, namely ‘[42]’
+      In the expression: conc (conc ["hello"] ["world"]) [42][0m[0m
+[?1h=ghci> conc (conc ["hello"] ["world"]) [42][8D']) ["goodbye"][38D["hello"] ["world"][K[19D"helloo" "world"[K[16D[[1]] [[2, 3]][K[13D1] [2, 3][K[15Dplus 2.0 3.0[K[12Dadd 2.0 3.0[K[11D:t conc[K[4Dplus[4Dadd[K[5Dl "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :t add10E[?1l>add10 :: Integer -> Integer
+[?1h=ghci> :t add10[K[K[K[K[Kplus5E[?1l>plus5 :: Integer -> Integer
+[?1h=ghci> :t plus5[K[K[K[K[KconcHelloE[?1l>concHello :: [Char] -> [Char]
+[?1h=ghci> add10 10E[?1l>20
+[?1h=ghci> plus5 8E[?1l>13
+[?1h=ghci> concHello "p[Kplump "E[?1l>"helloplump "
+[?1h=ghci> let tuple = ("hello", 42 in fst tupleE[?1l>
+[;1m<interactive>:20:26: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m parse error on input ‘in’[0m[0m
+[?1h=ghci> let tuple = ("hello", 42 in fst tuple)2 in fst tuple[14D2 in fst tuple[K[14D[C) in fst tuple[13DE[?1l>"hello"
+[?1h=ghci> let tuple = ("hello", 42) in fst tuple tuple[K[6D tuple[K[6D tuple[K[6Ds tuple[6Dn tuple[6Dd tuple[6DE[?1l>42
+[?1h=ghci> first ("hello", 42)E[?1l>
+[;1m<interactive>:23:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Variable not in scope: first :: (String, b0) -> t[0m[0m
+[?1h=ghci> first ("hello", 42)[19Dlet tuple = ("hello", 42) in snd tuple[9Dfst tuple[14D in fst tuple[K[37DconcHello "plump "[K[18Dplus5 8[K[7Dadd10 10[8D:t concHello[9Dplus5[K[5Dadd10[7Dl "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16Dfirst ("hello", 42)E[?1l>"hello"
+[?1h=ghci> first ("hello", 42)[2D ("hello", 42)[K[14D ("hello", 42)[K[14D ("hello", 42)[K[14D ("hello", 42)[K[14D ("hello", 42)[K[14Ds ("hello", 42)[14De ("hello", 42)[14Dc ("hello", 42)[14Do ("hello", 42)[14Dn ("hello", 42)[14Dd ("hello", 42)[14DE[?1l>42
+[?1h=ghci> first(12, "hello", [])E[?1l>
+[;1m<interactive>:27:6: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Couldn't match expected type: (a, b0)
+                  with actual type: (a1, String, [a0])
+    • In the first argument of ‘first’, namely ‘(12, "hello", [])’
+      In the expression: first (12, "hello", [])
+      In an equation for ‘it’: it = first (12, "hello", [])
+    • Relevant bindings include it :: a (bound at <interactive>:27:1)[0m[0m
+[?1h=ghci> first(12, "hello", [])[22Dsecond ("hello", 42)[K[20Dfirst ("hello", 42)[K[19D:l "lab7-sol.hs"[K[16Dfirst ("hello", 42)[19D:l "lab7-sol.hs"[KE[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> fst3(1, 2, 3)E[?1l>
+[;1m<interactive>:29:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3(1, 2, 3)[13D:l "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16Dfst3(1, 2, 3)[KE[?1l>
+[;1m<interactive>:31:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3(1, 2, 3) (1, 2, 3)[9DE[?1l>
+[;1m<interactive>:32:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3 (1, 2, 3)[10D(1, 2, 3)[K[13D:l "lab7-sol.hs"[15Dfst3(1, 2, 3)[K[9D (1, 2, 3)[14D[K:rE[?1l>Ok, one module loaded.
+[?1h=ghci> :r[2Dfst3 (1, 2, 3)[10D(1, 2, 3)[K[9D (1, 2, 3)E[?1l>
+[;1m<interactive>:34:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3 (1, 2, 3)E[?1l>
+[;1m<interactive>:35:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3 (1, 2, 3)[14D:r[K[2Dfst3 (1, 2, 3)[10D(1, 2, 3)[K[13D:l "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[KE[?1l>
+[;1m<interactive>:37:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: fst3 :: (a0, b0, c0) -> t
+    • Perhaps you meant ‘fst’ (imported from Prelude)[0m[0m
+[?1h=ghci> fst3 (1, 2, 3)[14D:l "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[KE[?1l>1
+[?1h=ghci> fst3 (1, 2, 3)3 (1, 2, 3)[K[11D3 (1, 2, 3)[K[11D3 (1, 2, 3)[K[11Ds3 (1, 2, 3)[11Dn3 (1, 2, 3)[11Dd3 (1, 2, 3)[11DE[?1l>2
+[?1h=ghci> snd3 (1, 2, 3)[14Dfst3 (1, 2, 3)[14D:l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[K[14D:l "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+
+[;1mlab7-sol.hs:27:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Parse error in pattern: sumFirst2
+    In a function binding for the ‘+’ operator.[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m27 |[0m[0m [;1m[31msumFirst2 (a, _, _)[0m[0m + (_, b, _) = c
+[;1m[34m   |[0m[0m[;1m[31m ^^^^^^^^^^^^^^^^^^^[0m[0m
+Failed, no modules loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16Dsnd3 (1, 2, 3)[K[14Dfst3 (1, 2, 3)[14D:l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[K[14D:l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[K[14D:l "lab7-sol.hs"[16Dfst3 (1, 2, 3)[K[14Dsnd3 (1, 2, 3)[14D:l "lab7-sol.hs"[16D[K:l "lab7-sol.hs"[16Dsnd3 (1, 2, 3)[K[14D:l "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> :l "lab7-sol.hs"[16D[KsumFirst2 (1, 2, 3)E[?1l>
+[;1m<interactive>:43:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Script started on 2023-11-01 14:16:11-04:00 [TERM="tmux-256color" TTY="/dev/pts/20" COLUMNS="100" LINES="62"]
+[?2004hjdavis75@remote00:~/i471a/submit/lab7$ ghcu[Ki
+[?2004lGHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10] ]E[?1l>[(1,6),(2,17),(3,34),(4,57),(5,86),(6,121),(7,162),(8,209),(9,262),(10,321)]
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10] ], ][2D  ][2D( ][2D3 ][2D* ][2D( ][2Dx ][2D^ ][2D2 ][2D) ][2D  ][2D+ ][2D  ][2D2 ][2D* ][2Dx ][2D  ][2D+ ][2D  ][2D1 ][2D) ][2D  ][2D% ][2D  ][2D3 ][2D  ][2D= ][2D= ][2D[C[C[C  ][2D0 ][2D[C][K[C[C[CE[?1l>
+[;1m<interactive>:2:62: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Variable not in scope: (%) :: b -> Bool -> Bool[0m[0m
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) % 3 == 0] 3 == 0][K[8D' 3 == 0][8Dm 3 == 0][8Do 3 == 0][8Dd 3 == 0][8D' 3 == 0][8DE[?1l>
+[;1m<interactive>:3:62: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Syntax error on 'mod'
+      Perhaps you intended to use TemplateHaskell or TemplateHaskellQuotes
+    • In the Template Haskell quotation 'mod'[0m[0m
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) 'mod' 3 == 0] 3 == 0][K[8Dmod 3 == 0][K[11DE[?1l>
+[;1m<interactive>:4:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Non type-variable argument
+        in the constraint: Num ((a1 -> a1 -> a1) -> t -> a2)
+      (Use FlexibleContexts to permit this)
+    • When checking the inferred type
+        it :: forall {a1} {t} {a2}.
+              (Integral a1, Num t, Num a2, Num ((a1 -> a1 -> a1) -> t -> a2),
+               Eq a2, Enum ((a1 -> a1 -> a1) -> t -> a2)) =>
+              [((a1 -> a1 -> a1) -> t -> a2, (a1 -> a1 -> a1) -> t -> a2)][0m[0m
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) mod 3 == 0] 0][K[3D= 0][3D 0][K[3DE[?1l>
+[;1m<interactive>:5:68: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m parse error on input ‘=’[0m[0m
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) mod 3 = 0][3D= 0][11D'mod' 3 == 0][13D% 3 == 0][K 0][K[3DE[?1l>
+[;1m<interactive>:6:66: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m parse error on input ‘=’[0m[0m
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) % 3 = 0][8Dmod 3 = 0][3D= 0][11D'mod' 3 == 0] 0][K[3DE[?1l>
+[;1m<interactive>:7:70: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m parse error on input ‘=’[0m[0m
+[?1h=ghci> 2 mod 2 ==  mod 2 == [K[10D4 mod 2 == [10D[C[2C[C[C[C[C[C[C[C0E[?1l>
+[;1m<interactive>:8:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num
+                         ((Integer -> Integer -> Integer) -> Integer -> Integer))
+        arising from the literal ‘4’
+        (maybe you haven't applied a function to enough arguments?)
+    • In the expression: 4
+      In the first argument of ‘(==)’, namely ‘4 mod 2’
+      In the expression: 4 mod 2 == 0[0m[0m
+[?1h=ghci> 4 mod 2 == 0' 2 == 0[7D'mod' 2 == 0[11DE[?1l>
+[;1m<interactive>:9:3: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Syntax error on 'mod'
+      Perhaps you intended to use TemplateHaskell or TemplateHaskellQuotes
+    • In the Template Haskell quotation 'mod'[0m[0m
+[?1h=ghci> 4 'mod' 2 == 0[12Dmod 2 == 0[K[10D'mod' 2 == 0 2 == 0[K[7D 2 == 0[K[7D[2D 2 == 0[K[7D 2 == 0[K[7D% 2 == 0[7DE[?1l>
+[;1m<interactive>:10:3: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Variable not in scope: (%) :: t0 -> Bool -> t[0m[0m
+[?1h=ghci> reuslt[K[2D[K[Ksut[Klt = a 'mod' bE[?1l>
+[;1m<interactive>:11:12: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Syntax error on 'mod'
+      Perhaps you intended to use TemplateHaskell or TemplateHaskellQuotes
+    • In the Template Haskell quotation 'mod'[0m[0m
+[?1h=ghci> result = a 'mod' b b[K[2D b[K[2D b[K[2D b[K[2D b[K[2D% b[2DE[?1l>
+[;1m<interactive>:12:10: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m Variable not in scope: a[0m[0m
+
+[;1m<interactive>:12:12: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Variable not in scope: (%) :: t0 -> t1 -> t[0m[0m
+
+[;1m<interactive>:12:14: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m Variable not in scope: b[0m[0m
+[?1h=ghci> result = a % b[3D'mod' b[18D4 % 2 == 0[K[8D'mod' 2 == 0[12Dmod 2 == 0[K[12D[(x, (3*(x^2) + 2*x +1)) | x <- [1..10], (3*(x^2) + 2*x + 1) 'mod' 3 = 0] 3 = 0][K[7D 3 = 0][K[7D 3 = 0][K[7D 3 = 0][K[7D 3 = 0][K[7Dr(3*(x^2) + 2*x + 1)  3 = 0][27De(3*(x^2) + 2*x + 1)  3 = 0][27Dm(3*(x^2) + 2*x + 1)  3 = 0][27D (3*(x^2) + 2*x + 1)  3 = 0][27D[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C== 0][4D[C[C[C[CE[?1l>[(1,6),(4,57),(7,162),(10,321)]
+[?1h=ghci> [(x, (3*(x^2) + 2*x +1)) | x <- [1..10], rem (3*(x^2) + 2*x + 1)  3 == 0][73D[K:r[Kl "lab7-sol.hs"E[?1l>[1 of 1] Compiling Main             ( lab7-sol.hs, interpreted )
+Ok, one module loaded.
+[?1h=ghci> odde[KEvenPairs 5E[?1l>
+[;1m<interactive>:15:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: oddEvenPairs :: t0 -> t
+    • Perhaps you meant ‘oddEvePairs’ (line 40)[0m[0m
+[?1h=ghci> oddEvenPairs 5Pairs 5[K[7DE[?1l>[(1,2),(1,4),(3,2),(3,4),(5,2),(5,4)]
+[?1h=ghci> oddEvePairs 5[K7E[?1l>[(1,2),(1,4),(1,6),(3,2),(3,4),(3,6),(5,2),(5,4),(5,6),(7,2),(7,4),(7,6)]
+[?1h=ghci> E[?1l>Leaving GHCi.
+[?2004hjdavis75@remote00:~/i471a/submit/lab7$ [?2004l
+exit
+
+Script done on 2023-11-01 14:43:22-04:00 [COMMAND_EXIT_CODE="0"]
